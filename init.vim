@@ -1,5 +1,3 @@
-" line settings 
-set number 
 set relativenumber
 
 " =============================================================================
@@ -16,7 +14,8 @@ Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'neoclide/coc.nvim' , {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim' , {'branch' : 'release'}
+Plug 'feline-nvim/feline.nvim'
 call plug#end()
 
 " no arrow keys --- force home row 
@@ -52,3 +51,4 @@ filetype on "detect files based on type
 filetype plugin on 
 
 filetype indent on "maintain identation
+
