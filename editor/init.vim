@@ -14,6 +14,7 @@ Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'rebelot/kanagawa.nvim'
 Plug 'neoclide/coc.nvim' , {'branch' : 'release'}
 Plug 'feline-nvim/feline.nvim'
 call plug#end()
@@ -45,10 +46,9 @@ let g:go_fmt_command = "goimports"
 " colors 
 set t_Co=256
 set background=dark
-colorscheme PaperColor
+colorscheme kanagawa-wave 
 
 filetype on "detect files based on type
 filetype plugin on 
 
 filetype indent on "maintain identation
-
