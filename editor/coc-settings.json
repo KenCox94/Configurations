@@ -1,3 +1,25 @@
 {
-	"coc.preferences.formatOnSave": true
+	"coc.preferences.formatOnSave": true,
+	"python.jediEnabled": false,
+	"java.import.maven.enabled": true,
+	"java.completion.guessMethodArguments": true,
+	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/16.0.2/clangd_16.0.2/bin/clangd",
+	"languageserver": {
+		"go": {
+			"command": "gopls",
+			"rootPatterns": [
+				"go.work",
+				"go.mod",
+				".vim/",
+				".git/",
+				".hg/"
+			],
+			"filetypes": [
+				"go"
+			],
+			"initializationOptions": {
+				"usePlaceholders": true
+			}
+		}
+	}
 }
