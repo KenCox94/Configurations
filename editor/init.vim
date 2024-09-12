@@ -1,10 +1,16 @@
+syntax enable
+set background=dark
+set autoindent
+set copyindent
+set cursorline
+set incsearch
+set hlsearch
 set relativenumber
-
+set number
 " =============================================================================
 " # PLUGINS
 " =============================================================================
 call plug#begin() 
-
 Plug 'cespare/vim-toml', {'branch': 'main'}
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
@@ -21,13 +27,12 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'github/copilot.vim'
 Plug 'catppuccin/nvim', {'as':'catppuccin'}
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh'
     \ }
-
-
 call plug#end()
 
 " no arrow keys --- force home row 
@@ -47,41 +52,26 @@ map H ^
 map L $
 
 " Autocomplete
-inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
-" C++
-" setting with vim-lsp
-if executable('ccls')
-   au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls']},
-      \ 'root_uri': {server_info->lsp#utils#path_to_uri(
-      \   lsp#utils#find_nearest_parent_file_directory(
-      \     lsp#utils#get_buffer_path(), ['.ccls', 'compile_commands.json', '.git/']))},
-      \ 'initialization_options': {
-      \   'highlight': { 'lsRanges' : v:true },
-      \   'cache': {'directory': stdpath('cache') . '/ccls' },
-      \ },
-      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-      \ })
-endif
-
-let g:coc_global_extensions = ['coc-clangd']
-" setting with vim-lsp
-" Disable auto-indentation for C++ files (optional)
 autocmd FileType cpp setlocal noexpandtab
-
+autocmd FileType c setlocal noexpandtab
 " Golang
 let g:go_play_open_browser = 0
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
 
+
+" let g:python3_host_prog =""
+
 " colors 
 set t_Co=256
-set background=dark
-colorscheme kanagawa-dragon 
+colorscheme catppuccin-frappe
 
 filetype on "detect files based on type
 filetype plugin on 
 
 filetype indent on "maintain identation
 set tags=tags
+set tabstop=4
+set shiftwidth=4
+set expandtab
+let g:python3_host_prog = "~/.cache/pypoetry/virtualenvs/mace-wRS4ndAs-py3.11/bin/python"
