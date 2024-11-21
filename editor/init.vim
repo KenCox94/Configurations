@@ -11,6 +11,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'fatih/vim-go'
 Plug 'dag/vim-fish'
+Plug 'sidebar-nvim/sidebar.nvim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'NLKNguyen/papercolor-theme'
@@ -78,10 +79,13 @@ let g:go_fmt_command = "goimports"
 " colors 
 set t_Co=256
 set background=dark
-colorscheme kanagawa-dragon 
+colorscheme catppuccin-macchiato
 
 filetype on "detect files based on type
 filetype plugin on 
 
 filetype indent on "maintain identation
 set tags=tags
+set tabstop=4
+set shiftwidth=4
+set expandtab
